@@ -55,7 +55,56 @@ namespace FlooringShop
                 Console.ReadLine();
                 return;
             }
-            // ---- part 2 (flooring choice + cost) goes here ----
+                        // show the flooring options
+            Console.WriteLine();
+            Console.WriteLine("Which flooring would you like?");
+            Console.WriteLine(floor1);
+            Console.WriteLine(floor2);
+            Console.WriteLine(floor3);
+            Console.Write("Type A, B or C: ");
+            string letter = Console.ReadLine().ToUpper();
+
+            // check if the letter is valid
+            if (letter == "A" || letter == "B" || letter == "C")
+            {
+                choice = letter;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice! Please type A, B or C");
+                Console.ReadLine();
+                return;
+            }
+
+            double area = 0;
+            double cost = 0;
+            string floorName = "";
+
+            // calculate area and cost for each choice
+            if (choice == "A")
+            {
+                area = length * width;
+                cost = area * price1;
+                floorName = "Walnut Wood";
+            }
+            if (choice == "B")
+            {
+                area = length * width;
+                cost = area * price2;
+                floorName = "Grey Vinyl";
+            }
+            if (choice == "C")
+            {
+                area = length * width;
+                cost = area * price3;
+                floorName = "Granite Tile";
+            }
+
+            // show the final result
+            Console.WriteLine();
+            Console.WriteLine("You picked " + floorName + ". The area of your floor is "
+                + area.ToString("0.0") + " sq.ft and the total cost is $" + cost.ToString("0.00"));
+            
 
             Console.ReadLine();
         }
