@@ -40,6 +40,21 @@ namespace FlooringShop
                 Console.ReadLine();
                 return;
             }
+            // ask user for the width of the room
+            Console.Write("Enter the width of your room in feet: ");
+            string widthInput = Console.ReadLine();
+
+            // check if it is a number
+            if (double.TryParse(widthInput, out width) && width > 0)
+            {
+                width = Math.Round(width, 1);
+            }
+            else
+            {
+                Console.WriteLine("Invalid width! Please enter a number like 10.5");
+                Console.ReadLine();
+                return;
+            }
             // ---- part 2 (flooring choice + cost) goes here ----
 
             Console.ReadLine();
