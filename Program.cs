@@ -25,7 +25,21 @@ namespace FlooringShop
 
             Console.WriteLine("Welcome to the Flooring Shop!");
             Console.WriteLine();
+            // ask user for the length of the room
+            Console.Write("Enter the length of your room in feet: ");
+            string lengthInput = Console.ReadLine();
 
+            // check if it is a number
+            if (double.TryParse(lengthInput, out length) && length > 0)
+            {
+                length = Math.Round(length, 1);
+            }
+            else
+            {
+                Console.WriteLine("Invalid length! Please enter a number like 12.5");
+                Console.ReadLine();
+                return;
+            }
             // ---- part 2 (flooring choice + cost) goes here ----
 
             Console.ReadLine();
