@@ -1,0 +1,10 @@
+﻿namespace flooring_shop
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
